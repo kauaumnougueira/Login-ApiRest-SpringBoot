@@ -1,10 +1,12 @@
 package KauaNog.ApiRestLogin.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class User {
     private String name;
+    @Id
     private String email;
     private String senha;
 
