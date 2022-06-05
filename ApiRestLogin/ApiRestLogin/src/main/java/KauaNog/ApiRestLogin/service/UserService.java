@@ -1,14 +1,14 @@
 package KauaNog.ApiRestLogin.service;
 
-import KauaNog.ApiRestLogin.model.User;
+import KauaNog.ApiRestLogin.model.Userss;
 
 public interface UserService {
     
-    User findByEmail(String email);
+    Userss findByEmail(String email);
 
-    void insert(User user);
+    void insert(Userss user);
 
-    void update(String email, User user);
+    void update(String email, Userss user);
 
     void delete(String email);
 

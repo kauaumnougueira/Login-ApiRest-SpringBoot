@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import KauaNog.ApiRestLogin.model.User;
+import KauaNog.ApiRestLogin.model.Userss;
 import KauaNog.ApiRestLogin.service.UserService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
@@ -22,18 +22,18 @@ public class UserRestController {
     private UserService userService;
 
     @GetMapping("/{email}")
-	public ResponseEntity<User> findByEmail(@PathVariable String email) {
+	public ResponseEntity<Userss> findByEmail(@PathVariable String email) {
 		return ResponseEntity.ok(userService.findByEmail(email));
 	}
 
     @PostMapping
-	public ResponseEntity<User> inserir(@RequestBody User user) {
+	public ResponseEntity<Userss> inserir(@RequestBody Userss user) {
 		userService.insert(user);
 		return ResponseEntity.ok(user);
 	}
 
     @PutMapping("/{email}")
-	public ResponseEntity<User> atualizar(@PathVariable String email, @RequestBody User user) {
+	public ResponseEntity<Userss> atualizar(@PathVariable String email, @RequestBody Userss user) {
 		userService.update(email, user);
 		return ResponseEntity.ok(user);
 	}
